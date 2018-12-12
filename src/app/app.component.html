@@ -1,0 +1,10 @@
+<div *ngIf="errorMessage" class="overlay text-center text-danger">
+    <h4>{{errorMessage}}</h4>
+</div>
+
+<div *ngIf="loading" class="overlay banner">
+    Carregando...
+</div>
+
+
+<router-outlet></router-outlet>

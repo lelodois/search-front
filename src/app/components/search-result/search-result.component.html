@@ -1,0 +1,36 @@
+<div *ngIf="ativo && search" class="">
+
+    <div class="card-title success">
+        <small>Sua busca pelo texto:</small>
+        <b> {{search.text}}</b>
+        <small>retornou</small>
+        <b> {{search.results.length}}</b>
+        <small>itens</small>
+    </div>
+
+    <div *ngFor="let item of search.results; let idx= index" class="card" style="margin-bottom: 8px;">
+        <div class="card-header">
+            <h5>
+                {{idx+1}}
+                <small> /{{search.results.length}} -</small>
+                Usuário: <b class="text-info">{{item.name}}</b>
+            </h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                {{item.id}} - {{item.userName}}
+            </h5>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <button type="submit"
+                data-dismiss="modal"
+                aria-label="Close"
+                class="btn btn-danger btn-group-justified btn-primary"
+                tabindex="6"
+                style="margin-top: 10px;">
+            Fechar
+        </button>
+    </div>
+</div>

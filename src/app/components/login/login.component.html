@@ -1,0 +1,72 @@
+<header class="masthead">
+    <div class="overlay text-center">
+        <h1 class="text-warning"><b>Search Client</b></h1>
+    </div>
+    <div class="container">
+        <div id="loginbox" style="margin-top:50px;"
+             class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+            <div style="padding-top:30px" class="panel-body">
+
+                <form class="form-horizontal"
+                      role="form"
+                      (keyup.enter)="login(loginUsername.value, loginPassword.value)">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i></span>
+                        <input #loginUsername type="text"
+                               maxlength="20"
+                               class="form-control" name="username"
+                               placeholder="login">
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i></span>
+                        <input #loginPassword type="password" class="form-control" name="password"
+                               maxlength="20"
+                               placeholder="password">
+                    </div>
+
+
+                    <div class="form-group pull-right">
+                        <div class="col-sm-12 controls">
+                            <a *ngIf="!logging"
+                               (click)="login(loginUsername.value, loginPassword.value)"
+                               class="btn text-white btn-success">
+                                Login
+                            </a>
+                            <a *ngIf="logging"
+                               class="disabled text-dark btn-default btn text-white">
+                                ...
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div id="accordion" class="text-body">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn pull-left btn-primary"
+                        data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                    Veja os usuários existentes
+                </button>
+            </h5>
+        </div>
+    </div>
+</div>
+<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="card-body">
+        <app-user-list></app-user-list>
+    </div>
+</div>
+

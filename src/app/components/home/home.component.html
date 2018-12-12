@@ -1,0 +1,21 @@
+<header class="masthead">
+    <div class="overlay">
+        <div *ngIf="user" class="col-xs-12">
+            <div class="pull-left text-white">
+                <h5>Olá: {{user.name.toLocaleUpperCase()}}</h5>
+            </div>
+            <div class="pull-right text-white">
+                <a href="" (click)="logout()" class="btn-xs btn-danger btn">Sair</a>
+            </div>
+        </div>
+        <div class="col-xs-12 text-center">
+            <h1 class="text-warning"><b>Search Client</b></h1>
+        </div>
+    </div>
+    <div>
+        <app-search *ngIf="admin == true"></app-search>
+        <h4 *ngIf="admin == false" class="text-white text-justify">
+            Search somente disponível para o user admin.
+        </h4>
+    </div>
+</header>
